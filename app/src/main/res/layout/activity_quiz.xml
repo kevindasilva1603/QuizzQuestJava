@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4CC9F0"
+    android:padding="24dp">
+
+    <!-- Chrono -->
+    <TextView
+        android:id="@+id/txtTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15"
+        android:textSize="24sp"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:contentDescription="Temps restant"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Question -->
+    <TextView
+        android:id="@+id/txtQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Quelle est la capitale du fun ?"
+        android:textSize="22sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:contentDescription="Texte de la question"
+        app:layout_constraintTop_toBottomOf="@id/txtTimer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Réponses -->
+    <Button
+        android:id="@+id/btnAnswer1"
+        style="@style/FunAnswerButton"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toBottomOf="@id/txtQuestion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/btnAnswer2"
+        style="@style/FunAnswerButton"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toBottomOf="@id/btnAnswer1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnAnswer3"
+        style="@style/FunAnswerButton"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toBottomOf="@id/btnAnswer2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnAnswer4"
+        style="@style/FunAnswerButton"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toBottomOf="@id/btnAnswer3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Joker -->
+    <Button
+        android:id="@+id/btnJoker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🃏 Joker"
+        android:backgroundTint="#F72585"
+        android:textColor="#FFFFFF"
+        android:contentDescription="Bouton Joker pour éliminer deux mauvaises réponses"
+        app:layout_constraintTop_toBottomOf="@id/btnAnswer4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
