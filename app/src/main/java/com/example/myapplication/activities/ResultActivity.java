@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +13,7 @@ import com.example.myapplication.data.ScoreStorage;
 public class ResultActivity extends AppCompatActivity {
 
     TextView txtFinalScore;
-    Button btnRetry, btnRanking;
+    Button btnRetry, btnRanking, btnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +23,7 @@ public class ResultActivity extends AppCompatActivity {
         txtFinalScore = findViewById(R.id.txtFinalScore);
         btnRetry = findViewById(R.id.btnRetry);
         btnRanking = findViewById(R.id.btnRanking);
+        btnHome = findViewById(R.id.btnHome);
 
         int score = getIntent().getIntExtra("score", 0);
         String playerName = getIntent().getStringExtra("playerName");
@@ -32,12 +32,9 @@ public class ResultActivity extends AppCompatActivity {
             playerName = "Joueur";
         }
 
-        txtFinalScore.setText("Ton score : " + score + " / 10");
+        txtFinalScore.setText("🎉 Ton score : " + score + " / 10");
 
-        // (Optionnel) Toast pour vérifier les valeurs reçues
-        // Toast.makeText(this, "Nom: " + playerName + " | Score: " + score, Toast.LENGTH_SHORT).show();
-
-        // Sauvegarder score et nom dans les préférences
+        // Enregistrer score + joueur
         ScoreStorage.saveScore(this, score, playerName);
 
         btnRetry.setOnClickListener(v -> {
@@ -52,5 +49,10 @@ public class ResultActivity extends AppCompatActivity {
             finish();
         });
 
+        btnHome.setOnClickListener(v -> {
+            Intent intent = new Intent(ResultActivity.this, AccueilActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 }

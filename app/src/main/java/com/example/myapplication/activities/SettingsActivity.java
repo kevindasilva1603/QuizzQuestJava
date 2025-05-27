@@ -23,10 +23,11 @@ public class SettingsActivity extends AppCompatActivity {
 
         switchSound = findViewById(R.id.switchSound);
         switchTheme = findViewById(R.id.switchTheme);
-
+        btnHome = findViewById(R.id.btnHome); // ✅ Ajout nécessaire
 
         prefs = getSharedPreferences("settings", MODE_PRIVATE);
 
+        // Charger les préférences sauvegardées
         switchSound.setChecked(prefs.getBoolean("sound", true));
         switchTheme.setChecked(prefs.getBoolean("darkmode", false));
 

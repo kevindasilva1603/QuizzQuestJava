@@ -1,6 +1,6 @@
 package com.example.myapplication.activities;
 
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,7 +18,7 @@ import java.util.List;
 public class RankingActivity extends AppCompatActivity {
 
     ListView listViewScores;
-    Button btnClear;
+    Button btnClear, btnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class RankingActivity extends AppCompatActivity {
 
         listViewScores = findViewById(R.id.listViewScores);
         btnClear = findViewById(R.id.btnClear);
+        btnHome = findViewById(R.id.btnHome);
 
         chargerClassement();
 
@@ -36,16 +37,18 @@ public class RankingActivity extends AppCompatActivity {
                     .setMessage("Voulez-vous vraiment effacer le classement ?")
                     .setPositiveButton("Oui", (dialog, which) -> {
                         ScoreStorage.clearScores(this);
-                        chargerClassement(); // recharger la liste
+                        chargerClassement();
                     })
                     .setNegativeButton("Annuler", null)
                     .show();
         });
 
-
-
+        btnHome.setOnClickListener(v -> {
+            Intent intent = new Intent(RankingActivity.this, AccueilActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
-
 
     private void chargerClassement() {
         List<ScoreStorage.ScoreEntry> entries = ScoreStorage.getScoreEntries(this);
