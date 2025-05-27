@@ -41,7 +41,11 @@ public class RankingActivity extends AppCompatActivity {
                     .setNegativeButton("Annuler", null)
                     .show();
         });
+
+
+
     }
+
 
     private void chargerClassement() {
         List<ScoreStorage.ScoreEntry> entries = ScoreStorage.getScoreEntries(this);

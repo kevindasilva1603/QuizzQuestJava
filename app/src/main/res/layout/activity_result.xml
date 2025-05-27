@@ -34,4 +34,5 @@
         android:text="🏆 Voir le classement"
         android:backgroundTint="#2A9D8F"
         android:textColor="#FFFFFF" />
+
 </LinearLayout>

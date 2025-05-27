@@ -199,13 +199,20 @@ public class QuizActivity extends AppCompatActivity {
 
         Collections.shuffle(wrongButtons);
         if (wrongButtons.size() >= 2) {
-            wrongButtons.get(0).setEnabled(false);
-            wrongButtons.get(1).setEnabled(false);
+            for (int i = 0; i < 2; i++) {
+                Button b = wrongButtons.get(i);
+                b.setEnabled(false);
+                b.setBackgroundColor(getResources().getColor(android.R.color.darker_gray)); // feedback visuel
+            }
         } else if (wrongButtons.size() == 1) {
-            wrongButtons.get(0).setEnabled(false);
+            Button b = wrongButtons.get(0);
+            b.setEnabled(false);
+            b.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
         }
 
         btnJoker.setEnabled(false);
         jokerUsed = true;
+
+        Toast.makeText(this, "Deux mauvaises réponses supprimées !", Toast.LENGTH_SHORT).show();
     }
 }

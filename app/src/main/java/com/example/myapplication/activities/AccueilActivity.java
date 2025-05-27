@@ -56,4 +56,5 @@ public class AccueilActivity extends AppCompatActivity {
                 .setNegativeButton("Annuler", null)
                 .show();
     }
+
 }
