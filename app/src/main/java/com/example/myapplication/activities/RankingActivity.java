@@ -20,6 +20,7 @@ public class RankingActivity extends AppCompatActivity {
     ListView listViewScores;
     Button btnClear, btnHome;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

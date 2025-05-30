@@ -75,6 +75,7 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
+
     private void afficherQuestion() {
         if (currentIndex >= questions.size()) {
             Intent intent = new Intent(this, ResultActivity.class);
@@ -202,7 +203,7 @@ public class QuizActivity extends AppCompatActivity {
             for (int i = 0; i < 2; i++) {
                 Button b = wrongButtons.get(i);
                 b.setEnabled(false);
-                b.setBackgroundColor(getResources().getColor(android.R.color.darker_gray)); // feedback visuel
+                b.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
             }
         } else if (wrongButtons.size() == 1) {
             Button b = wrongButtons.get(0);

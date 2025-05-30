@@ -23,7 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         switchSound = findViewById(R.id.switchSound);
         switchTheme = findViewById(R.id.switchTheme);
-        btnHome = findViewById(R.id.btnHome); // ✅ Ajout nécessaire
+        btnHome = findViewById(R.id.btnHome); //
 
         prefs = getSharedPreferences("settings", MODE_PRIVATE);
 
